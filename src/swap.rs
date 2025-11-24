@@ -1,3 +1,5 @@
+use solana_sdk::pubkey::Pubkey;
+
 #[derive(Copy, Clone, Debug, PartialEq)]
 pub enum Side {
     Bid,
@@ -126,7 +128,12 @@ pub enum Swap {
     TesseraV {
         side: Side,
     },
+    Hylo {
+        in_token: Pubkey,
+        out_token: Pubkey
+    },
 }
+
 #[derive(Clone, PartialEq, Eq, Debug)]
 pub enum AccountsType {
     TransferHookA,
