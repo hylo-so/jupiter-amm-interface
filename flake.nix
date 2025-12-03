@@ -18,11 +18,6 @@
         in {
           default = pkgs.mkShell {
             packages = [ pkgs.rust-bin.nightly.latest.default ];
-            buildInputs = pkgs.lib.optionals pkgs.stdenv.isDarwin
-              (with pkgs.darwin.apple_sdk.frameworks; [
-                Security
-                SystemConfiguration
-              ]);
           };
         });
     };
