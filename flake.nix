@@ -18,6 +18,7 @@
         in {
           default = pkgs.mkShell {
             packages = [ pkgs.rust-bin.nightly.latest.default ];
+            buildInputs = [ pkgs.openssl pkgs.pkg-config ];
           };
         });
     };
